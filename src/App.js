@@ -1,12 +1,13 @@
 import "./App.css";
-import { useSelector } from "react-redux";
+import TaskForm from "./components/TaskForm";
+import TasksList from "./components/TasksList";
 
 function App() {
-  const { tasks } = useSelector((state) => state);
-  console.log(tasks);
   return (
     <div className="App">
       <h1>CRUD Redux Toolkit</h1>
+      <TaskForm />
+      <TasksList />
     </div>
   );
 }
