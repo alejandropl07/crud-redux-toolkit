@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import { addTask } from "../features/tasks/taskSlice";
 
 const TaskForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [task, setTask] = useState({
     title: "",
     description: "",
@@ -25,6 +27,7 @@ const TaskForm = () => {
         id: uuid(),
       })
     );
+    navigate("/");
   };
 
   return (
